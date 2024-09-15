@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prova - Jogo Heroi vs Vilão</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="audio" src="./Music/videoplayback.m4a" autoplay loop></audio>
+<div id="app">
+    <div class="character">
+        <div :style="{width:hero.Percentil + '%'}" class="life-bar">{{hero.life}}
+        </div>
+        <div class="sprite"><img src="GIFS/DeathKnight.gif" class="DeathKnightsprite"></div>
+        <h1>Hunter</h1>
+        <div class="actions">
+            <button v-if="hero.magicMode == false" @click="attack(true)">Atacar</button>
+            <button v-else @click="Ceifar(true)">Ceifar</button>
+            <button v-if="hero.magicMode == false" @click="Block(true)">Bloquear</button>
+            <button v-else @click="Drenar(true)">Drenar</button>
+            <button v-if="hero.magicMode == false" @click="usePotion(true)">Usar Poção</button>
+            <button v-else @click="Ultimate(true)">Ultimate</button>
+            <button v-if="hero.magicMode == false" @click="Magic(true)">SAAREBAS</button>
+            <button v-else @click="Sair(true)">Desativar Forma</button>
+        </div>
+    </div>
+    <div class="character">
+        <div :style="{width:villain.Percentil + '%'}" class="life-bar">{{villain.life}}</div>
+        <div class="sprite"><img src="GIFS/b42a9da7772096228e7d4ae7df38db49_w200.gif" alt=""></div>
+        <h1>Deathington</h1>
+    </div>
+    <div v-show="Ending" class="final">
+        Nosso inimigo teve a cabeça chutada ate arrebentar
+        <button @click="Refresh()">Tentar novamente</button>
+    </div>
+</div>
+</body>
+</html>
+
+<script src="index.js"></script>
+<script>
+    window.onload=()=>{
+        var audio = document.getElementById("audio")
+        audio.volume=0.30
+    }
+</script>

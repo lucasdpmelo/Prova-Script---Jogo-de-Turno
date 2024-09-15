@@ -1,0 +1,92 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e8ec;
+    background-image: url(./GIFS/Creepy\ Graveyard.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover ;
+}
+
+
+
+#app {
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.character {
+    background-color: rgb(8, 8, 8);
+    border: 2px solid #050505;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: red;
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ed0d0d;
+    color: whitesmoke;
+    cursor: pointer;
+    box-shadow: 1px 1px 20px rgb(138, 134, 134);
+    transition: background-color 0.3s, transform 0.2s;
+}
+button:hover {
+    background-color: #0b0b0b;
+}
+button:active {
+    transform: translateY(2px);
+}
+
+.life-bar{
+    height: 30px;
+    width: 100%;
+    background-color: #9ce39e;
+    color: #32450a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.sprite {
+    height: 250px;
+    margin-bottom: 20px;
+    background-color: #c1c1c1;
+    border-radius: 5px;
+}
+
+.DeathKnightsprite{
+    height: 250px;
+}
+
+.final {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.37);
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    font-size: 3rem;
+    user-select: none;
+}
